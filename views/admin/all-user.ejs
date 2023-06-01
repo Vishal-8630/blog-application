@@ -1,0 +1,30 @@
+<%- include('../includes/head', {pageTitle: 'Create Blog'}) %>
+
+<link rel="stylesheet" href="/styles/all-user.css">
+</head>
+<body>
+    <%- include('../includes/nav-header') %>
+
+    <main>
+        <h1 class="heading">
+            All User
+        </h1>
+
+        <section id="all-user-section">
+            <ul class="user-list">
+                <% for(const user of allUser) { %>
+                    <% if(!(user._id.toString() === locals.uid)) { %>
+                        <li class="user-list-items">
+                            <h3><%= user.fullname %></h3>
+                            <p><span>Signup on</span> - <em>(<time datetime="<%= user.date %>"><%= user.formattedDate %></time>)</em></p>
+                            <div class="links">
+                                <a href="/admin/user/<%= user._id %>/all-blogs" class="btn">All Blogs &gt;</a>
+                            </div>
+                        </li>
+                    <% } %>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+<%- include('../includes/footer') %>

@@ -1,0 +1,14 @@
+<li>
+    <article class="blogs">
+        <section class="header-section">
+            <em><span><%= blog.userName %></span> (<time datetime="<%= blog.date %>"><%= blog.formattedDate %></time>)</em>
+            <p></p>
+            <div class="blog-content">
+                <h1><%= blog.title %></h1>
+                <div class="view-blog-link">
+                    <a href="/<%= blog._id %>/view" class="btn btn-alt">View Blog</a>
+                </div>
+            </div>
+        </section>
+    </article>
+</li>

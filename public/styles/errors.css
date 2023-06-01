@@ -1,0 +1,32 @@
+main {
+    margin: calc(3 * var(--space-9)) auto;
+    width: 80%;
+    max-width: 60rem;
+    padding: var(--space-7);
+}
+
+.heading {
+    text-transform: uppercase;
+    font-size: var(--font-size-9);
+    margin: var(--space-7) 0;
+}
+
+p {
+    font-size: var(--font-size-5);
+}
+
+.btn-alt {
+    background-color: transparent;
+}
+
+.btn-alt:hover {
+    background-color: transparent;
+}
+
+a {
+    color: var(--color-blue-100);
+}
+
+a:hover {
+    color: var(--color-blue-500);
+}

@@ -1,0 +1,33 @@
+<%- include('../includes/head', {pageTitle: 'All Blogs'}) %>
+
+<link rel="stylesheet" href="/styles/user-all-blogs.css">
+</head>
+<body>
+    <%- include('../includes/nav-header') %>
+
+    <main>
+        <% if(!userBlogs || userBlogs.length === 0) { %>
+            <h1 class="heading" id="error">No blog has been written by this user yet!</h1>
+        <% } else { %>
+            <h1 class="heading"><em><%= userBlogs[0].userName %></em>'s All Blog</h1>
+
+            <section class="all-blogs">
+                <ul class="blog-list">
+                    <% for(const blog of userBlogs) { %>
+                        <li class="list-items">
+                            <article>
+                                <p class="title"><span><%= blog.title %></span> <em>(<time datetime="<%= blog.date %>"><%= blog.formattedDate %></time>)</em></p>
+                                <p class="hr"></p>
+                                <p class="content">
+                                    <%= blog.content %>
+                                </p>
+                            </article>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
+
+        <% } %>
+    </main>
+
+<%- include('../includes/footer') %>

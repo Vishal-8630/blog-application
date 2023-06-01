@@ -1,0 +1,33 @@
+<header>
+    <nav>
+        <div id="logo">
+            <a>Blogging Site</a>
+        </div>
+        <div id="nav">
+            <ul>
+                <li class="nav-items"><a href="/all-blogs">All Blogs</a></li>
+                <% if(!locals.isAuth) { %>
+                    <li class="nav-items"><a href="/signup">Signup</a></li>
+                    <li class="nav-items"><a href="/login">Login</a></li>
+                <% } %>
+
+                <% if(locals.isAuth && !locals.isAdmin) { %>
+                    <li class="nav-items"><a href="/blog/your-blogs">Your Blogs</a></li>
+                    <li class="nav-items"><a href="/blog/new">Create Blog</a></li>
+                    <li class="nav-items"><a href="/logout">Logout</a></li>
+                <% } %>
+
+                <% if(locals.isAdmin) { %>
+                    <li class="nav-items"><a href="/admin/all-user">All User</a></li>
+                    <li class="nav-items"><a href="/logout">Logout</a></li>
+                <% } %>
+            </ul>
+
+        </div>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>

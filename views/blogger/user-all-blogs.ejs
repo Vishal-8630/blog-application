@@ -1,0 +1,35 @@
+<%- include('../includes/head', {pageTitle: 'Your Blogs'}) %>
+
+<link rel="stylesheet" href="/styles/all-blogs.css">
+</head>
+<body>
+    <%- include('../includes/nav-header') %>
+
+    <main>
+        <% if(!blogs || blogs.length === 0) { %>
+            <div class="not-found">
+                <p class="message">
+                    Sorry! No blog found - Create some?
+                </p>
+
+                <p class="link-section">
+                    <a href="/blog/new" class="btn">Create Blog</a>
+                </p>
+            </div>
+        <% } else {%>
+            <h1 class="heading">
+                All Your Blogs
+            </h1>
+
+            <div>
+                <ul id="blog-section" >
+                   <% for(const blog of blogs) { %>
+                        <%- include('../shared/blog-content', {blog: blog}) %>
+                    <% } %>
+                </ul>
+            </div>
+
+        <% } %>
+    </main>
+
+<%- include('../includes/footer') %>
